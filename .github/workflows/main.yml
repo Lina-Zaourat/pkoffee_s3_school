@@ -9,5 +9,4 @@ jobs:
       - run: "echo 'Running tests on: ${{ runner.os }}'"
       - run: "echo 'Repo: ${{ github.ref }}'"
       - run: "echo 'Branch: ${{ github.ref }}'"
-      - run: apt-get update && apt-get-install -y plantuml
       
