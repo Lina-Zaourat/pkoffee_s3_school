@@ -3,10 +3,36 @@ name: A simple test workflow
 on: [push]
 
 jobs:
-  unit-test:
-    runs-on: ubuntu-latest
-    steps:
-      - run: "echo 'Running tests on: ${{ runner.os }}'"
-      - run: "echo 'Repo: ${{ github.ref }}'"
-      - run: "echo 'Branch: ${{ github.ref }}'"
-      
+    SayHello:
+        runs-on: ubuntu-latest
+
+        steps:
+        - run: "echo 'Running tests for ${{ github.repository }}'"
+        - run: "echo 'Repo: ${{ github.repository }}'"
+        - run: "echo 'Branch: ${{ github.ref }}'"
+    code-checks:
+        runs-on: ubuntu-latest
+
+        steps:
+
+        - name: Checkout the code 
+          uses: actions/checkout@v6
+        - name: Install pixi
+          uses: prefix-dev/setup-pixi@v0.9.3
+          with:
+           pixi-version: v0.62.2
+        - name: look for syntax errors
+          run: pixi run ruff check
+    unit-test:
+      runs-on: ubuntu-latest
+      steps:
+  
+      - name: Checkout the code
+        uses: actions/checkout@v6
+      - name: Install pixi
+        uses: prefix-dev/setup-pixi@v0.9.3
+        with:
+            pixi-version: v0.62.2
+      - run: pixi run pytest
+    
+        
