@@ -6,6 +6,7 @@ Project inspired by _Le Café - Oldelaf_ for the S3 School 2026.
 
 [![Le Café - Oldelaf - on YouTube](http://img.youtube.com/vi/UGtKGX8B9hU/0.jpg)](http://www.youtube.com/watch?v=UGtKGX8B9hU "Le Café - Oldelaf")
 
+[![A simple test workflow](https://github.com/Lina-Zaourat/pkoffee_s3_school/actions/workflows/main.yml/badge.svg)](https://github.com/Lina-Zaourat/pkoffee_s3_school/actions/workflows/main.yml)
 
 ## Features
 
